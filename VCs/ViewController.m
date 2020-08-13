@@ -160,7 +160,6 @@
     text.translatesAutoresizingMaskIntoConstraints = NO;
     text.backgroundColor = UIColor.orangeColor;
     [text.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:20].active = YES;
-    NSLog(@"%ld",text.autoresizingMask);
 }
 
 - (void)buttonPressed:(UIButton *)button {
