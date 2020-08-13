@@ -14,9 +14,14 @@
 
 @implementation WeatherViewController
 
+- (UIColor * _Nonnull)setupController {
+    return self.view.backgroundColor = UIColor.orangeColor;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setupController];
 }
 
 /*

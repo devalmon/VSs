@@ -23,8 +23,6 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     
     self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *) scene];
-    ViewController *rootViewController = [[ViewController alloc] init];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
     [self.window makeKeyAndVisible];
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
@@ -33,8 +31,11 @@
     WeatherViewController *weatherController = [[WeatherViewController alloc] init];
     
     NSArray *arrayOfControllers = [NSArray arrayWithObjects:viewController, weatherController, nil];
-    [tabBarController setViewControllers:arrayOfControllers animated:YES];
-    [self.window addSubview:[tabBarController view]];
+    [tabBarController setViewControllers:arrayOfControllers animated:NO];
+    viewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"ViewController" image:nil tag:0];
+    weatherController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"WeatherController" image:nil tag:1];
+    
+    [self.window setRootViewController:tabBarController];
 }
 
 
