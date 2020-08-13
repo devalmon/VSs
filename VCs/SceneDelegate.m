@@ -26,6 +26,15 @@
     ViewController *rootViewController = [[ViewController alloc] init];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
     [self.window makeKeyAndVisible];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    
+    ViewController *viewController = [[ViewController alloc] init];
+    WeatherViewController *weatherController = [[WeatherViewController alloc] init];
+    
+    NSArray *arrayOfControllers = [NSArray arrayWithObjects:viewController, weatherController, nil];
+    [tabBarController setViewControllers:arrayOfControllers animated:YES];
+    [self.window addSubview:[tabBarController view]];
 }
 
 
