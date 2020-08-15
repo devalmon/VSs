@@ -104,7 +104,7 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button addTarget:self action:@selector(applyButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:@"apply" forState:UIControlStateNormal];
-    button.layer.backgroundColor = [UIColor lightGrayColor].CGColor;
+    button.layer.backgroundColor = [UIColor cyanColor].CGColor;
     [button setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
     button.frame = CGRectMake(100, 700, 250, 100);
     button.layer.cornerRadius = 12;
@@ -158,8 +158,11 @@
     
 
     text.translatesAutoresizingMaskIntoConstraints = NO;
-    text.backgroundColor = UIColor.orangeColor;
-    [text.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:20].active = YES;
+    text.backgroundColor = UIColor.lightGrayColor;
+    [text.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-20].active = YES;
+    [text.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:20].active = YES;
+    [text.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-20].active = YES;
+    [text.topAnchor constraintEqualToAnchor:stackOfColorButtons.bottomAnchor constant:20].active = YES;
 }
 
 - (void)buttonPressed:(UIButton *)button {
