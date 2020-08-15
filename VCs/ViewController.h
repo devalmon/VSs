@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ChangeColorDelegate <NSObject>
+
+@end
+
 @interface ViewController : UIViewController
 
 

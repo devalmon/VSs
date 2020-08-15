@@ -9,8 +9,10 @@
 #import "SceneDelegate.h"
 #import "ViewController.h"
 #import "WeatherViewController.h"
+#import "TabBarController.h"
 
 @interface SceneDelegate ()
+
 
 @end
 
@@ -25,7 +27,7 @@
     self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *) scene];
     [self.window makeKeyAndVisible];
     
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    TabBarController *tabBarController = [[TabBarController alloc] init];
     
     ViewController *viewController = [[ViewController alloc] init];
     WeatherViewController *weatherController = [[WeatherViewController alloc] init];
@@ -37,7 +39,6 @@
     
     [self.window setRootViewController:tabBarController];
 }
-
 
 - (void)sceneDidDisconnect:(UIScene *)scene {
     // Called as the scene is being released by the system.

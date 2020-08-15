@@ -10,9 +10,15 @@
 
 @interface WeatherViewController ()
 
+@property (nonatomic, strong) UIImage *image;
+
 @end
 
 @implementation WeatherViewController
+
+- (NSString *)getUnsplash {
+    return @"https://api.unsplash.com/photos/?client_id=Yv1cNEmVM7qUMXP5NHEEFl02El8oh0h_mXp8vuM5nJo";
+}
 
 - (UIColor * _Nonnull)setupController {
     return self.view.backgroundColor = UIColor.whiteColor;
@@ -83,14 +89,25 @@
     [graphicImage.leadingAnchor constraintEqualToAnchor:weatherCondition.leadingAnchor constant:20].active = YES;
     [graphicImage.trailingAnchor constraintEqualToAnchor:weatherCondition.trailingAnchor constant:-20].active = YES;
     
-    
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     [self.view addGestureRecognizer:tapGestureRecognizer];
-    
 }
 
 - (void)handleTap:(UITapGestureRecognizer *)tapGesture {
-    NSLog(@"tap");
+    /*
+    NSMutableString *URLString = [[NSMutableString alloc] initWithString:[self getUnsplash]];
+    [URLString appendString:@"/photos/random"];
+    NSURL * url = [NSURL URLWithString:URLString];
+    NSMutableURLRequest *req = [[NSMutableURLRequest alloc] initWithURL:url];
+    [req setHTTPMethod:@"GET"];
+    [[[NSURLSession sharedSession] dataTaskWithRequest:req completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"data: %@\nresp: %@", data, response);
+        
+        UIImage *downloadedImage = [UIImage imageWithData:data];
+        self.image = downloadedImage;
+        
+    }] resume];
+     */
     
 }
 
